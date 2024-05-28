@@ -1,17 +1,20 @@
 import pandas as pd
+from dataset_generator import dataGeneration
 
 names = (
-    'firstname', 'lastname', 'gender', 'age', 'zipcode', 'role', 'education', 'salary'
+    'first name', 'last name', 'gender', 'age', 'zip code', 'role', 'education', 'salary'
 )
+
+numerical = ('age', 'zip code')
 
 categorical = (
     'gender', 'role', 'education'
 )
 ei = (
-    'firstname', 'lastname'
+    'first name', 'last name'
 )
 # read the dataset
-df = pd.read_csv('data.csv', names=names) # place holder
+df = dataGeneration()
 
 # function to split the dataset into two partitions using the median for numerical columns
 def split(df, partition, column):
@@ -22,7 +25,7 @@ def split(df, partition, column):
     :        returns: A tuple containing a split of the original partition
     """
     dfp = df[column][partition]
-    if column in categorical:
+    if column in categorical or column in ei:
         values = dfp.unique()
         lv = set(values[:len(values)//2])
         rv = set(values[len(values)//2:])
@@ -77,7 +80,7 @@ def is_l_diverse(df, partition, sensitive_column, l=2):
     return diversity(df, partition, sensitive_column) >= l
 
 # we apply our partitioning method to two columns of our dataset, using "income" as the sensitive attribute
-feature_columns = ['firstname', 'lastname', 'gender', 'age', 'zipcode', 'role', 'education']
+feature_columns = ['first name', 'last name', 'gender', 'age', 'zip code', 'role', 'education']
 sensitive_column = 'salary'
 finished_partitions = partitioning(df, feature_columns, sensitive_column, is_k_anonymous)
 
@@ -98,33 +101,45 @@ def agg_ei_column(series):
 def agg_sensitive_column(series):
     return [series.apply(lambda x: round(x/10000)*10000)]
 
-# function to build the anonymized dataset
 def build_anonymized_dataset(df, partitions, feature_columns, sensitive_column):
-    aggregations = {}
-    sensitive_column = agg_sensitive_column(sensitive_column)
-    for column in feature_columns:
-        if column in categorical:
-            aggregations[column] = agg_categorical_column
-        elif column in categorical:
-            aggregations[column] = agg_numerical_column
-        elif column in ei:
-            aggregations[column] = agg_ei_column
     rows = []
-    for i, partition in enumerate(partitions):
-        grouped_columns = df.loc[partition].agg(aggregations, squeeze=False)
-        # count occurrences of each sensitive value
-        sensitive_counts = df.loc[partition].groupby(sensitive_column).agg({sensitive_column : 'count'})
-        # Anonymized rows
-        values = grouped_columns.iloc[0].to_dict()
-        for sensitive_value, count in sensitive_counts[sensitive_column].items():
-            if count == 0:
-                continue
-            values.update({
-                sensitive_column : sensitive_value,
-                'count' : count,
-            })
-            rows.append(values.copy())
-    return pd.DataFrame(rows)
+    a={}
+    for partition in partitions:
+        partition_data = df.loc[partition]
+        for column in ei:
+            a[column] = agg_ei_column(partition_data[column])
+        print (a)
+        aggregated_data = {}
+
+        
+        
+# function to build the anonymized dataset
+# def build_anonymized_dataset(df, partitions, feature_columns, sensitive_column):
+#     aggregations = {}
+#     sensitive_column = agg_sensitive_column
+#     for column in feature_columns:
+#         if column in categorical:
+#             aggregations[column] = agg_categorical_column
+#         elif column in numerical:
+#             aggregations[column] = agg_numerical_column
+#         elif column in ei:
+#             aggregations[column] = agg_ei_column
+#     rows = []
+#     for i, partition in enumerate(partitions):
+#         grouped_columns = df.loc[partition].agg(aggregations, squeeze=False)
+#         # count occurrences of each sensitive value
+#         sensitive_counts = df.loc[partition].groupby(sensitive_column).agg({sensitive_column : 'count'})
+#         # Anonymized rows
+#         values = grouped_columns.iloc[0].to_dict()
+#         for sensitive_value, count in sensitive_counts[sensitive_column].items():
+#             if count == 0:
+#                 continue
+#             values.update({
+#                 sensitive_column : sensitive_value,
+#                 'count' : count,
+#             })
+#             rows.append(values.copy())
+#     return pd.DataFrame(rows)
 
 
 dfn = build_anonymized_dataset(df, finished_partitions, feature_columns, sensitive_column)  
