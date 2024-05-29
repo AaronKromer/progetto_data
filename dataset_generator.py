@@ -110,7 +110,7 @@ def dataGeneration():
         salary = random.randint(lower_salary, higher_salary)
         seniority=age-20
         #add all elements to the list
-        employee_list.append({"first name": first_name, "last name": last_name, "gender":gender,"age": age,  "zip code": zip_code, "education": education[0] ,"role": role[0],  "salary":round((salary+(seniority*500)) / 100) * 100})
+        employee_list.append({"first name": first_name, "last name": last_name, "gender":gender,"age": age,  "zip code": zip_code, "education": education[0] ,"role": role[0],  "salary":round((salary+(seniority*500)) / 10000) * 10000})
         
 
     #list conversion to pandas dataframe
