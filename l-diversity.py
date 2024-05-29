@@ -13,6 +13,9 @@ categorical = (
 ei = (
     'first name', 'last name'
 )
+sens = (
+    'salary'
+)
 # read the dataset
 df = dataGeneration()
 
@@ -96,7 +99,7 @@ def agg_numerical_column(series):
     return [series.mean()]
 
 def agg_ei_column(series):
-    return [series.apply(lambda x: '****')]
+    return ['****']
 
 def agg_sensitive_column(series):
     return [series.apply(lambda x: round(int(x)/10000)*10000)]
@@ -124,10 +127,14 @@ def build_anonymized_dataset(df, partitions, feature_columns, sensitive_column):
         elif column in ei:
             aggregations[column] = agg_ei_column
     rows = []
-    for i, partition in enumerate(partitions):
+    for partition in partitions:
         tmp = df.loc[partition]
-        tmp['dummy_id'] = 1
-        grouped_columns = tmp.groupby('dummy_id').agg(aggregations, squeeze=False)
+        cat_df = tmp[[c for c in df.columns if c in categorical]]
+        num_df = tmp[[c for c in df.columns if c in numerical]]
+        ei_df = tmp[[c for c in df.columns if c in ei]]
+        sens_df = tmp[[c for c in df.columns if c in sens]]
+        grouped_columns =pd.concat([num_df.agg(agg_numerical_column), cat_df.agg(agg_categorical_column), ei_df.agg(agg_ei_column),sens_df.agg(agg_sensitive_column)], axis=1)
+        print(grouped_columns)
         # grouped_columns = df.loc[partition].agg(aggregations, squeeze=False)
         # count occurrences of each sensitive value
         
@@ -151,6 +158,5 @@ dfn = build_anonymized_dataset(df, finished_partitions, feature_columns, sensiti
 finished_l_diverse_partitions = partitioning(df, feature_columns, sensitive_column, lambda *args: is_k_anonymous(*args) and is_l_diverse(*args))
 dfl = build_anonymized_dataset(df, finished_l_diverse_partitions, feature_columns, sensitive_column)
 
-print(dfn)
-print(dfl)
+
 pd.DataFrame.to_csv(dfn, 'anonymized.csv')
