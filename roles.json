@@ -1,0 +1,20 @@
+{
+    "Manager": "Leadership",
+    "Team Leader": "Leadership",
+    "Project Manager": "Leadership",
+    "Accountant": "Finance",
+    "Finance Analyst": "Finance",
+    "Human Resource Recruiter": "HR",
+    "Training and Development Specialist": "HR",
+    "Compensation and Benefits Specialist": "HR",
+    "Sales Representative": "Sales",
+    "Customer Service Representative": "Sales",
+    "Marketing Specialist": "Sales",
+    "Sales Support Specialist": "Sales",
+    "IT Specialist": "IT",
+    "Data Analyst": "IT",
+    "Software Engineer": "IT",
+    "Administrative Assistant": "Administrative",
+    "Executive Assistant": "Administrative",
+    "Legal Consultant": "Legal"
+}
