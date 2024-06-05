@@ -1,328 +1,40 @@
-,first name,last name,gender,age,zip code,role,education,salary,count
-0,"[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: first name, dtype: object]","[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: last name, dtype: object]","['M,F']",[32.8],[48225.2],"['Human Resources,IT,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",40000,1
-1,"[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: first name, dtype: object]","[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: last name, dtype: object]","['M,F']",[32.8],[48225.2],"['Human Resources,IT,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",50000,1
-2,"[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: first name, dtype: object]","[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: last name, dtype: object]","['M,F']",[32.8],[48225.2],"['Human Resources,IT,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",60000,1
-3,"[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: first name, dtype: object]","[12    ****
-13    ****
-14    ****
-15    ****
-16    ****
-Name: last name, dtype: object]","['M,F']",[32.8],[48225.2],"['Human Resources,IT,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",90000,2
-4,"[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: first name, dtype: object]","[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: last name, dtype: object]","['M,F']",[45.2],[48182.6],"['Human Resources,Security,Manager,Technical Support']","['HighSchool,Doctorate']",50000,2
-5,"[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: first name, dtype: object]","[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: last name, dtype: object]","['M,F']",[45.2],[48182.6],"['Human Resources,Security,Manager,Technical Support']","['HighSchool,Doctorate']",60000,1
-6,"[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: first name, dtype: object]","[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: last name, dtype: object]","['M,F']",[45.2],[48182.6],"['Human Resources,Security,Manager,Technical Support']","['HighSchool,Doctorate']",130000,1
-7,"[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: first name, dtype: object]","[24    ****
-25    ****
-26    ****
-27    ****
-28    ****
-Name: last name, dtype: object]","['M,F']",[45.2],[48182.6],"['Human Resources,Security,Manager,Technical Support']","['HighSchool,Doctorate']",140000,1
-8,"[0    ****
-1    ****
-2    ****
-Name: first name, dtype: object]","[0    ****
-1    ****
-2    ****
-Name: last name, dtype: object]","['M,F']",[37.0],[48180.666666666664],"['Developer,Manager']","['Masters,Doctorate']",90000,1
-9,"[0    ****
-1    ****
-2    ****
-Name: first name, dtype: object]","[0    ****
-1    ****
-2    ****
-Name: last name, dtype: object]","['M,F']",[37.0],[48180.666666666664],"['Developer,Manager']","['Masters,Doctorate']",100000,1
-10,"[0    ****
-1    ****
-2    ****
-Name: first name, dtype: object]","[0    ****
-1    ****
-2    ****
-Name: last name, dtype: object]","['M,F']",[37.0],[48180.666666666664],"['Developer,Manager']","['Masters,Doctorate']",140000,1
-11,"[3     ****
-4     ****
-23    ****
-34    ****
-Name: first name, dtype: object]","[3     ****
-4     ****
-23    ****
-34    ****
-Name: last name, dtype: object]",['M'],[33.25],[48199.25],"['Developer,Cleaner,Technical Support']","['Masters,HighSchool']",30000,1
-12,"[3     ****
-4     ****
-23    ****
-34    ****
-Name: first name, dtype: object]","[3     ****
-4     ****
-23    ****
-34    ****
-Name: last name, dtype: object]",['M'],[33.25],[48199.25],"['Developer,Cleaner,Technical Support']","['Masters,HighSchool']",50000,1
-13,"[3     ****
-4     ****
-23    ****
-34    ****
-Name: first name, dtype: object]","[3     ****
-4     ****
-23    ****
-34    ****
-Name: last name, dtype: object]",['M'],[33.25],[48199.25],"['Developer,Cleaner,Technical Support']","['Masters,HighSchool']",90000,2
-14,"[5     ****
-6     ****
-7     ****
-42    ****
-Name: first name, dtype: object]","[5     ****
-6     ****
-7     ****
-42    ****
-Name: last name, dtype: object]",['M'],[31.75],[48194.75],"['Security,Developer,Cleaner']","['Bachelors,HighSchool']",30000,1
-15,"[5     ****
-6     ****
-7     ****
-42    ****
-Name: first name, dtype: object]","[5     ****
-6     ****
-7     ****
-42    ****
-Name: last name, dtype: object]",['M'],[31.75],[48194.75],"['Security,Developer,Cleaner']","['Bachelors,HighSchool']",50000,1
-16,"[5     ****
-6     ****
-7     ****
-42    ****
-Name: first name, dtype: object]","[5     ****
-6     ****
-7     ****
-42    ****
-Name: last name, dtype: object]",['M'],[31.75],[48194.75],"['Security,Developer,Cleaner']","['Bachelors,HighSchool']",90000,2
-17,"[8     ****
-9     ****
-10    ****
-11    ****
-Name: first name, dtype: object]","[8     ****
-9     ****
-10    ****
-11    ****
-Name: last name, dtype: object]","['M,F']",[31.75],[48244.5],"['Human Resources,IT,Security']","['Masters,HighSchool']",50000,4
-18,"[17    ****
-18    ****
-19    ****
-47    ****
-Name: first name, dtype: object]","[17    ****
-18    ****
-19    ****
-47    ****
-Name: last name, dtype: object]",['M'],[32.0],[48244.0],"['Human Resources,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",40000,1
-19,"[17    ****
-18    ****
-19    ****
-47    ****
-Name: first name, dtype: object]","[17    ****
-18    ****
-19    ****
-47    ****
-Name: last name, dtype: object]",['M'],[32.0],[48244.0],"['Human Resources,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",50000,1
-20,"[17    ****
-18    ****
-19    ****
-47    ****
-Name: first name, dtype: object]","[17    ****
-18    ****
-19    ****
-47    ****
-Name: last name, dtype: object]",['M'],[32.0],[48244.0],"['Human Resources,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",60000,1
-21,"[17    ****
-18    ****
-19    ****
-47    ****
-Name: first name, dtype: object]","[17    ****
-18    ****
-19    ****
-47    ****
-Name: last name, dtype: object]",['M'],[32.0],[48244.0],"['Human Resources,Developer,Technical Support']","['Bachelors,Masters,HighSchool']",90000,1
-22,"[20    ****
-21    ****
-22    ****
-Name: first name, dtype: object]","[20    ****
-21    ****
-22    ****
-Name: last name, dtype: object]","['M,F']",[37.666666666666664],[48173.0],"['Security,Developer,Technical Support']","['HighSchool,Doctorate']",50000,2
-23,"[20    ****
-21    ****
-22    ****
-Name: first name, dtype: object]","[20    ****
-21    ****
-22    ****
-Name: last name, dtype: object]","['M,F']",[37.666666666666664],[48173.0],"['Security,Developer,Technical Support']","['HighSchool,Doctorate']",90000,1
-24,"[29    ****
-30    ****
-31    ****
-Name: first name, dtype: object]","[29    ****
-30    ****
-31    ****
-Name: last name, dtype: object]","['M,F']",[37.0],[48249.666666666664],"['IT,Security,Developer']","['Masters,HighSchool']",60000,2
-25,"[29    ****
-30    ****
-31    ****
-Name: first name, dtype: object]","[29    ****
-30    ****
-31    ****
-Name: last name, dtype: object]","['M,F']",[37.0],[48249.666666666664],"['IT,Security,Developer']","['Masters,HighSchool']",80000,1
-26,"[32    ****
-33    ****
-35    ****
-Name: first name, dtype: object]","[32    ****
-33    ****
-35    ****
-Name: last name, dtype: object]","['M,F']",[39.0],[48230.666666666664],"['Developer,Technical Support']","['Masters,HighSchool,Doctorate']",50000,1
-27,"[32    ****
-33    ****
-35    ****
-Name: first name, dtype: object]","[32    ****
-33    ****
-35    ****
-Name: last name, dtype: object]","['M,F']",[39.0],[48230.666666666664],"['Developer,Technical Support']","['Masters,HighSchool,Doctorate']",100000,2
-28,"[36    ****
-37    ****
-38    ****
-Name: first name, dtype: object]","[36    ****
-37    ****
-38    ****
-Name: last name, dtype: object]",['M'],[47.333333333333336],[48209.333333333336],"['Security,Manager']","['Bachelors,Masters,HighSchool']",50000,1
-29,"[36    ****
-37    ****
-38    ****
-Name: first name, dtype: object]","[36    ****
-37    ****
-38    ****
-Name: last name, dtype: object]",['M'],[47.333333333333336],[48209.333333333336],"['Security,Manager']","['Bachelors,Masters,HighSchool']",130000,1
-30,"[36    ****
-37    ****
-38    ****
-Name: first name, dtype: object]","[36    ****
-37    ****
-38    ****
-Name: last name, dtype: object]",['M'],[47.333333333333336],[48209.333333333336],"['Security,Manager']","['Bachelors,Masters,HighSchool']",140000,1
-31,"[39    ****
-40    ****
-41    ****
-Name: first name, dtype: object]","[39    ****
-40    ****
-41    ****
-Name: last name, dtype: object]","['M,F']",[44.666666666666664],[48246.0],"['Human Resources,Manager,Technical Support']","['Masters,HighSchool']",40000,1
-32,"[39    ****
-40    ****
-41    ****
-Name: first name, dtype: object]","[39    ****
-40    ****
-41    ****
-Name: last name, dtype: object]","['M,F']",[44.666666666666664],[48246.0],"['Human Resources,Manager,Technical Support']","['Masters,HighSchool']",50000,1
-33,"[39    ****
-40    ****
-41    ****
-Name: first name, dtype: object]","[39    ****
-40    ****
-41    ****
-Name: last name, dtype: object]","['M,F']",[44.666666666666664],[48246.0],"['Human Resources,Manager,Technical Support']","['Masters,HighSchool']",140000,1
-34,"[43    ****
-44    ****
-45    ****
-Name: first name, dtype: object]","[43    ****
-44    ****
-45    ****
-Name: last name, dtype: object]","['M,F']",[35.333333333333336],[48208.333333333336],"['Developer,Manager']","['Bachelors,HighSchool']",80000,1
-35,"[43    ****
-44    ****
-45    ****
-Name: first name, dtype: object]","[43    ****
-44    ****
-45    ****
-Name: last name, dtype: object]","['M,F']",[35.333333333333336],[48208.333333333336],"['Developer,Manager']","['Bachelors,HighSchool']",90000,1
-36,"[43    ****
-44    ****
-45    ****
-Name: first name, dtype: object]","[43    ****
-44    ****
-45    ****
-Name: last name, dtype: object]","['M,F']",[35.333333333333336],[48208.333333333336],"['Developer,Manager']","['Bachelors,HighSchool']",140000,1
-37,"[46    ****
-48    ****
-49    ****
-Name: first name, dtype: object]","[46    ****
-48    ****
-49    ****
-Name: last name, dtype: object]","['M,F']",[38.666666666666664],[48216.0],"['Human Resources,Security,Cleaner']","['Bachelors,HighSchool']",30000,2
-38,"[46    ****
-48    ****
-49    ****
-Name: first name, dtype: object]","[46    ****
-48    ****
-49    ****
-Name: last name, dtype: object]","['M,F']",[38.666666666666664],[48216.0],"['Human Resources,Security,Cleaner']","['Bachelors,HighSchool']",60000,1
+,age,zip code,gender,education,role,first name,last name,salary,count
+0,32.8,48225.2,"M,F","High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer,IT",****,****,40000,1
+1,32.8,48225.2,"M,F","High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer,IT",****,****,50000,1
+2,32.8,48225.2,"M,F","High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer,IT",****,****,60000,1
+3,32.8,48225.2,"M,F","High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer,IT",****,****,90000,2
+4,45.2,48182.6,"F,M","High School Graduate,Doctorate","Human Resources,Technical Support,Manager,Security",****,****,50000,2
+5,45.2,48182.6,"F,M","High School Graduate,Doctorate","Human Resources,Technical Support,Manager,Security",****,****,60000,1
+6,45.2,48182.6,"F,M","High School Graduate,Doctorate","Human Resources,Technical Support,Manager,Security",****,****,130000,1
+7,45.2,48182.6,"F,M","High School Graduate,Doctorate","Human Resources,Technical Support,Manager,Security",****,****,140000,1
+8,37.0,48180.666666666664,"F,M","Masters,Doctorate","Manager,Developer",****,****,90000,1
+9,37.0,48180.666666666664,"F,M","Masters,Doctorate","Manager,Developer",****,****,100000,1
+10,37.0,48180.666666666664,"F,M","Masters,Doctorate","Manager,Developer",****,****,140000,1
+11,33.25,48199.25,M,"High School Graduate,Masters","Cleaner,Technical Support,Developer",****,****,30000,1
+12,33.25,48199.25,M,"High School Graduate,Masters","Cleaner,Technical Support,Developer",****,****,50000,1
+13,33.25,48199.25,M,"High School Graduate,Masters","Cleaner,Technical Support,Developer",****,****,90000,2
+14,31.75,48194.75,M,"High School Graduate,Bachelors","Cleaner,Developer,Security",****,****,30000,1
+15,31.75,48194.75,M,"High School Graduate,Bachelors","Cleaner,Developer,Security",****,****,50000,1
+16,31.75,48194.75,M,"High School Graduate,Bachelors","Cleaner,Developer,Security",****,****,90000,2
+17,31.75,48244.5,"F,M","High School Graduate,Masters","Security,Human Resources,IT",****,****,50000,4
+18,32.0,48244.0,M,"High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer",****,****,40000,1
+19,32.0,48244.0,M,"High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer",****,****,50000,1
+20,32.0,48244.0,M,"High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer",****,****,60000,1
+21,32.0,48244.0,M,"High School Graduate,Masters,Bachelors","Human Resources,Technical Support,Developer",****,****,90000,1
+22,37.666666666666664,48173.0,"F,M","High School Graduate,Doctorate","Technical Support,Developer,Security",****,****,50000,2
+23,37.666666666666664,48173.0,"F,M","High School Graduate,Doctorate","Technical Support,Developer,Security",****,****,90000,1
+24,37.0,48249.666666666664,"M,F","High School Graduate,Masters","Security,Developer,IT",****,****,60000,2
+25,37.0,48249.666666666664,"M,F","High School Graduate,Masters","Security,Developer,IT",****,****,80000,1
+26,39.0,48230.666666666664,"F,M","High School Graduate,Masters,Doctorate","Technical Support,Developer",****,****,50000,1
+27,39.0,48230.666666666664,"F,M","High School Graduate,Masters,Doctorate","Technical Support,Developer",****,****,100000,2
+28,47.333333333333336,48209.333333333336,M,"High School Graduate,Masters,Bachelors","Manager,Security",****,****,50000,1
+29,47.333333333333336,48209.333333333336,M,"High School Graduate,Masters,Bachelors","Manager,Security",****,****,130000,1
+30,47.333333333333336,48209.333333333336,M,"High School Graduate,Masters,Bachelors","Manager,Security",****,****,140000,1
+31,44.666666666666664,48246.0,"F,M","High School Graduate,Masters","Human Resources,Technical Support,Manager",****,****,40000,1
+32,44.666666666666664,48246.0,"F,M","High School Graduate,Masters","Human Resources,Technical Support,Manager",****,****,50000,1
+33,44.666666666666664,48246.0,"F,M","High School Graduate,Masters","Human Resources,Technical Support,Manager",****,****,140000,1
+34,35.333333333333336,48208.333333333336,"M,F","High School Graduate,Bachelors","Manager,Developer",****,****,80000,1
+35,35.333333333333336,48208.333333333336,"M,F","High School Graduate,Bachelors","Manager,Developer",****,****,90000,1
+36,35.333333333333336,48208.333333333336,"M,F","High School Graduate,Bachelors","Manager,Developer",****,****,140000,1
+37,38.666666666666664,48216.0,"M,F","High School Graduate,Bachelors","Cleaner,Human Resources,Security",****,****,30000,2
+38,38.666666666666664,48216.0,"M,F","High School Graduate,Bachelors","Cleaner,Human Resources,Security",****,****,60000,1
