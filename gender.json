@@ -1,4 +1,6 @@
-{
-    "M": "Any Sex",
-    "F": "Any Sex"
+{ 
+    "lv1":{
+        "M": "Any Sex",
+        "F": "Any Sex"
+    }
 }

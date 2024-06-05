@@ -1,6 +1,20 @@
 {
-    "Doctorate": "Grad School",
-    "Masters": "Grad School",
-    "Bachelor": "Bachelor",
-    "High School": "Graduate"
+    "lv1":{
+        "Doctorate": "Grad School",
+        "Masters": "Grad School",
+        "Bachelor": "Bachelor",
+        "High School": "Graduate"
+    },
+    "lv2":{
+        "Doctorate": "any uni education",
+        "Masters": "any uni education",
+        "Bachelor": "any uni education",
+        "High School": "High School Graduate"
+    },
+    "lv3":{
+        "Doctorate": "any education",
+        "Masters": "any education",
+        "Bachelor": "any education",
+        "High School": "any education"
+    }
 }

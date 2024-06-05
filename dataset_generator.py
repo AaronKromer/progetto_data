@@ -115,4 +115,4 @@ def dataGeneration():
 
     #list conversion to pandas dataframe
     df = pd.DataFrame(employee_list)
-    return(df)
+    return(employee_list)
