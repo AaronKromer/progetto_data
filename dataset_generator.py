@@ -2,7 +2,7 @@ import pandas as pd
 import random
 from faker import Faker
 import os
-NUM=50
+NUM=100
 
 def dataGeneration():
     fake = Faker(locale='en_US')
@@ -11,7 +11,7 @@ def dataGeneration():
 
     roles = {
         "Manager":{
-            "age":"40-60", 
+            "age":"40-65", 
             "salary":"50000-60000",
             "education":{
                 "Doctorate":20, 
@@ -21,7 +21,7 @@ def dataGeneration():
             }
         }, 
         "Team Leader":{
-            "age":"35-55", 
+            "age":"35-62", 
             "salary":"45000-55000",
             "education":{
                 "Doctorate":10, 
@@ -41,7 +41,7 @@ def dataGeneration():
             }
         },
         "Accountant":{ 
-            "age":"25-60", 
+            "age":"25-62", 
             "salary":"35000-40000",
             "education":{
                 "Doctorate":2, 
@@ -181,7 +181,7 @@ def dataGeneration():
             }
         },
         "Legal Consultant":{
-            "age":"25-60", 
+            "age":"25-65", 
             "salary":"40000-45000",
             "education":{
                 "Doctorate":10, 
