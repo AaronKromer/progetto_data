@@ -96,7 +96,10 @@ def agg_categorical_column(series):
     return [','.join(set(series))]
 
 def agg_numerical_column(series):
-    return [series.mean()]
+    a=series.to_list()
+    max=max(a)
+    min=min(a)
+    return [f"{str(max)}-{str(min)}"]
 
 def agg_ei_column(series):
     return ['****']
