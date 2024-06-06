@@ -77,32 +77,50 @@ def check_l_diversity(ds, quasi_identifiers, sensitive_attr,l):
     return True
 
 # data generation
-ds = dataGeneration()
-# debug print
-print("dataframe prima della anonimizzazione")
-print(pd.DataFrame(ds))
+initial_ds = dataGeneration()
 
-# initial generalization
-lv = 1
-satisfies_k_anonymity = False
-satisfies_l_diversity = False
-
-# apply generalization
-while not (satisfies_k_anonymity and satisfies_l_diversity):
-    ds = dataGeneration()  # retry generation
-    apply_generalization(ds, lv)
+# # apply generalization
+# while not (satisfies_k_anonymity and satisfies_l_diversity):
+#     ds = dataGeneration()  # retry generation
+#     apply_generalization(ds, lv)
     
-    # check k-anonimity and l-diversity
+#     # check k-anonimity and l-diversity
+#     satisfies_k_anonymity = check_k_anonymity(ds, ['gender', 'age', 'zip code', 'role', 'education'], K)
+#     satisfies_l_diversity = check_l_diversity(ds, ['gender', 'age', 'zip code', 'role', 'education'], 'salary', L)
+    
+#     # increase generalization level
+#     if not (satisfies_k_anonymity and satisfies_l_diversity):
+#         lv += 1
+#         if lv > max(ZIPCODE_GENERALIZATION, AGE_GENERALIZATION):
+#             raise Exception("Impossible to satisfy k-anonymity and l-diversity with the given generalization levels")
+        
+lv = 1
+valid_ds = initial_ds.copy()
+valid_lv = lv
+while True:
+    ds = dataGeneration()
+    apply_generalization(ds,lv)
+    
     satisfies_k_anonymity = check_k_anonymity(ds, ['gender', 'age', 'zip code', 'role', 'education'], K)
     satisfies_l_diversity = check_l_diversity(ds, ['gender', 'age', 'zip code', 'role', 'education'], 'salary', L)
     
-    # increase generalization level
-    if not (satisfies_k_anonymity and satisfies_l_diversity):
+    if satisfies_k_anonymity and satisfies_l_diversity:
+        valid_ds = ds
+        valid_lv = lv
         lv += 1
-        if lv > max(ZIPCODE_GENERALIZATION, AGE_GENERALIZATION):
-            raise Exception("Impossible to satisfy k-anonymity and l-diversity with the given generalization levels")
+    else:
+        print(f"Dataset with lv={valid_lv} doesn't satisfies k-anonymity and l-diversity")
+        break
 
-# Print the dataset and the results
-print(pd.DataFrame(ds))
-print(f"Does the dataset satisfy the k-anonymity for k={K}? {satisfies_k_anonymity}")
-print(f"Does the dataset satisfy the l-diversity for l={L}? {satisfies_l_diversity}")
+print("Initial dataset:")
+print(pd.DataFrame(initial_ds))
+
+print(f"Generalized dataset at this level {valid_lv}:")
+print(pd.DataFrame(valid_ds))
+
+
+
+# # Print the dataset and the results
+# print(pd.DataFrame(ds))
+# print(f"Does the dataset satisfy the k-anonymity for k={K}? {satisfies_k_anonymity}")
+# print(f"Does the dataset satisfy the l-diversity for l={L}? {satisfies_l_diversity}")
