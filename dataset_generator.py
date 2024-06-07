@@ -2,7 +2,7 @@ import pandas as pd
 import random
 from faker import Faker
 import os
-NUM=100
+NUM=10000
 
 def dataGeneration():
     fake = Faker(locale='en_US')
@@ -11,7 +11,7 @@ def dataGeneration():
 
     roles = {
         "Manager":{
-            "age":"40-65", 
+            "age":"40-68", 
             "salary":"50000-60000",
             "education":{
                 "Doctorate":20, 
@@ -31,7 +31,7 @@ def dataGeneration():
             }
         },
         "Project Manager":{
-            "age":"40-60", 
+            "age":"40-64", 
             "salary":"40000-50000",
             "education":{
                 "Doctorate":20, 
@@ -41,7 +41,7 @@ def dataGeneration():
             }
         },
         "Accountant":{ 
-            "age":"25-62", 
+            "age":"23-64", 
             "salary":"35000-40000",
             "education":{
                 "Doctorate":2, 
@@ -61,7 +61,7 @@ def dataGeneration():
             }
         },
         "Human Resource Recruiter":{
-            "age":"25-60", 
+            "age":"22-60", 
             "salary":"25000-30000",
             "education":{
                 "Doctorate":2, 
@@ -71,7 +71,7 @@ def dataGeneration():
             }
         },
         "Training and Development Specialist":{
-            "age":"25-60", 
+            "age":"23-60", 
             "salary":"27000-30000",
             "education":{
                 "Doctorate":2, 
@@ -81,7 +81,7 @@ def dataGeneration():
             }
         },
         "Compensation and Benefits Specialist":{
-            "age":"25-60", 
+            "age":"24-50", 
             "salary":"30000-33000",
             "education":{
                 "Doctorate":2, 
@@ -91,7 +91,7 @@ def dataGeneration():
             }
         },
         "Sales Representative":{   
-            "age":"25-60", 
+            "age":"24-55", 
             "salary":"30000-33000",
             "education":{
                 "Doctorate":2, 
@@ -101,7 +101,7 @@ def dataGeneration():
             }
         },
         "Customer Service Representative":{
-            "age":"25-60", 
+            "age":"22-55", 
             "salary":"30000-33000",
             "education":{
                 "Doctorate":2, 
@@ -111,7 +111,7 @@ def dataGeneration():
             }
         },
         "Marketing Specialist":{
-            "age":"25-60", 
+            "age":"23-60", 
             "salary":"30000-33000",
             "education":{
                 "Doctorate":2, 
@@ -121,8 +121,8 @@ def dataGeneration():
             }
         },
         "Sales Support Specialist":{
-            "age":"25-60", 
-            "salary":"33000-35000",
+            "age":"22-50", 
+            "salary":"30000-33000",
             "education":{
                 "Doctorate":5, 
                 "Masters":30, 
@@ -131,7 +131,7 @@ def dataGeneration():
             }
         },
         "IT Specialist":{
-            "age":"25-60", 
+            "age":"24-63", 
             "salary":"33000-35000",
             "education":{
                 "Doctorate":5, 
@@ -141,7 +141,7 @@ def dataGeneration():
             }
         },
         "Data Analyst":{
-            "age":"25-60", 
+            "age":"24-63", 
             "salary":"35000-40000",
             "education":{
                 "Doctorate":15, 
@@ -151,7 +151,7 @@ def dataGeneration():
             }
         },
         "Software Engineer":{
-            "age":"25-60", 
+            "age":"24-63", 
             "salary":"30000-40000",
             "education":{
                 "Doctorate":10, 
@@ -161,7 +161,7 @@ def dataGeneration():
             }
         },
         "Administrative Assistant":{
-            "age":"25-60", 
+            "age":"22-40", 
             "salary":"33000-35000",
             "education":{
                 "Doctorate":5, 
@@ -171,7 +171,7 @@ def dataGeneration():
             }
         },
         "Executive Assistant":{
-            "age":"25-60", 
+            "age":"22-40", 
             "salary":"33000-35000",
             "education":{
                 "Doctorate":5, 
@@ -181,7 +181,7 @@ def dataGeneration():
             }
         },
         "Legal Consultant":{
-            "age":"25-65", 
+            "age":"25-68", 
             "salary":"40000-45000",
             "education":{
                 "Doctorate":10, 
@@ -227,7 +227,7 @@ def dataGeneration():
         salary = random.randint(lower_salary, higher_salary)
         seniority=age-20
         # add all elements to the list
-        employee_list.append({"first name":first_name,"last name":last_name,"gender":gender,"age": age,  "zip code": zip_code, "education": education[0] ,"role": role[0],  "salary":round((salary+(seniority*400)) / 1000) * 1000})
+        employee_list.append({"first name":first_name,"last name":last_name,"gender":gender,"age": age,  "zip code": zip_code, "education": education[0] ,"role": role[0],  "salary":round((salary+(seniority*350)) / 1000) * 1000})
     
 
     df = pd.DataFrame(employee_list)

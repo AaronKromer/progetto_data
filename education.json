@@ -1,20 +1,20 @@
 [
     {
-        "Doctorate": "Grad School",
-        "Masters": "Grad School",
-        "Bachelors": "Bachelor",
-        "High School Graduate": "Graduate"
+        "Doctorate": "Postgraduate",
+        "Masters": "Postgraduate",
+        "Bachelors": "Undergraduate",
+        "High School Graduate": "Secondary Education"
     },
     {
-        "Doctorate": "any uni education",
-        "Masters": "any uni education",
-        "Bachelors": "any uni education",
-        "High School Graduate": "High School Graduate"
+        "Doctorate": "University Education",
+        "Masters": "University Education",
+        "Bachelors": "University Education",
+        "High School Graduate": "Secondary Education"
     },
     {
-        "Doctorate": "any education",
-        "Masters": "any education",
-        "Bachelors": "any education",
-        "High School Graduate": "any education"
+        "Doctorate": "Any education",
+        "Masters": "Any education",
+        "Bachelors": "Any education",
+        "High School Graduate": "Any education"
     }
 ]
