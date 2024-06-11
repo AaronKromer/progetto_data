@@ -2,8 +2,6 @@ from dataset_generator import dataGeneration
 import pandas as pd
 import json , math , argparse
 import itertools
-K=5
-L=3
 LV=1
 AGE_GENERALIZATION=15
 ZIPCODE_GENERALIZATION=3
