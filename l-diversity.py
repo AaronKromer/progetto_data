@@ -128,6 +128,8 @@ if __name__ == '__main__':
                 print(f"k={k} and l={l} are not satisfied even with the maximum level of generalization")
             break
 
+    pd.DataFrame(initial_ds).to_csv("initial_dataset.csv", index=False)
+    pd.DataFrame(valid_ds).to_csv("generalized_dataset.csv", index=False)
     print("Initial dataset:")
     print(pd.DataFrame(initial_ds))
 
