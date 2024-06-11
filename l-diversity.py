@@ -2,7 +2,7 @@ from dataset_generator import dataGeneration
 import pandas as pd
 import json , math , argparse
 import itertools
-K=3
+K=5
 L=3
 LV=1
 AGE_GENERALIZATION=15
@@ -89,9 +89,10 @@ def check_l_diversity(ds, quasi_identifiers, sensitive_attr,l):
 # data generation
 if __name__ == '__main__':
     args = programOptions().parse_args()
-    k=args.k_anoniminity
-    l=args.l_diversity
-    num=args.num
+    print(f"argument: {args}")
+    k=int(args.k_anoniminity)
+    l=int(args.l_diversity)
+    num=int(args.num)
     
     initial_ds = dataGeneration(num)
 
@@ -103,8 +104,8 @@ if __name__ == '__main__':
         ds = dataGeneration()
         apply_generalization(ds,lvs)
         
-        satisfies_k_anonymity = check_k_anonymity(ds, ['gender', 'age', 'zip code', 'role', 'education'], K)
-        satisfies_l_diversity = check_l_diversity(ds, ['gender', 'age', 'zip code', 'role', 'education'], 'salary', L)
+        satisfies_k_anonymity = check_k_anonymity(ds, ['gender', 'age', 'zip code', 'role', 'education'], k)
+        satisfies_l_diversity = check_l_diversity(ds, ['gender', 'age', 'zip code', 'role', 'education'], 'salary', l)
         
         if satisfies_k_anonymity and satisfies_l_diversity:
 
