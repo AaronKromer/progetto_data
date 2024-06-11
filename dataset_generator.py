@@ -4,7 +4,7 @@ from faker import Faker
 import os
 NUM=10000
 
-def dataGeneration():
+def dataGeneration(num=NUM):
     fake = Faker(locale='en_US')
     Faker.seed(10)
     random.seed(10)
@@ -192,7 +192,7 @@ def dataGeneration():
         }
     }
         
-    numOfEmployees = NUM
+    numOfEmployees = num
     employee_list = []
     num_woman=0
     num_man=0
