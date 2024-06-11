@@ -17,19 +17,19 @@ After generating the artificial dataset we apply the generalization to it and we
 JSON files are used to map the generalization tree used for the different levels of generalization
 ## How To Run
 Clone the repository
-"""
+```
 git clone  https://github.com/AaronKromer/progetto_data.git
 cd progetto_data
-"""
+```
 ### Install dependencies
 Make sure you have python installed. Install the required packages using pip
-''' 
+``` 
 pip install -r requirements.txt
-'''
+```
 ### Run the generalization with anonymization and diversity check
-''' 
+``` 
 python l-diversity.py 
-'''
+```
 ### Requirements 
 - Python 3
 - Faker library
