@@ -2,18 +2,19 @@ from dataset_generator import dataGeneration
 import pandas as pd
 import json , math , argparse
 import itertools
+# variable initialization
 LV=1
 AGE_GENERALIZATION=15
 ZIPCODE_GENERALIZATION=3
 
+# list of attributes
 names = ['first name', 'last name', 'gender', 'age', 'zip code', 'role', 'education', 'salary']
 numerical =  ['age', 'zip code' ]
 categorical =  ['gender', 'role', 'education']
 ei =  ['first name', 'last name']
 sens =  ['salary']
 
-gerirachi=[ 'age', 'zip code', 'education', 'role']
-
+# function to parse the program options
 def programOptions():
     parser = argparse.ArgumentParser()
     parser.add_argument("--k_anoniminity","-k", required=False, default=3)
@@ -50,6 +51,7 @@ def ei_generalization(ds ,attr):
         data[attr]="****"
     return 0
 
+# function to apply the generalization function to the correct quasi identifier 
 def apply_generalization(ds ,lvs):
     for attr in ds[0].keys():
         if attr not in names:
@@ -75,6 +77,7 @@ def check_k_anonymity(ds, quasi_identifiers, k):
     anon = group_sizes >= k
     return all(anon)
 
+# function to check if the dataset is l-diverse
 def check_l_diversity(ds, quasi_identifiers, sensitive_attr,l):
     df = pd.DataFrame(ds)
     groups = df.groupby(quasi_identifiers)
@@ -84,20 +87,23 @@ def check_l_diversity(ds, quasi_identifiers, sensitive_attr,l):
             return False
     return True
 
-# data generation
 if __name__ == '__main__':
+    # parse the program options
     args = programOptions().parse_args()
     print(f"argument: {args}")
     k=int(args.k_anoniminity)
     l=int(args.l_diversity)
     num=int(args.num)
     
+    # data generation
     initial_ds = dataGeneration(num)
 
+    # generalization levels
     lvs={"age":1, "role":1, "education":1, "zip code":1, "gender":1} 
     iterKeys = itertools.cycle(lvs.keys())
     valid_ds = initial_ds.copy()
     valid_lv = lvs
+    # generalization loop
     while True:
         ds = dataGeneration()
         apply_generalization(ds,lvs)
@@ -105,6 +111,7 @@ if __name__ == '__main__':
         satisfies_k_anonymity = check_k_anonymity(ds, ['gender', 'age', 'zip code', 'role', 'education'], k)
         satisfies_l_diversity = check_l_diversity(ds, ['gender', 'age', 'zip code', 'role', 'education'], 'salary', l)
         
+        # keep the dataset if it satisfies k-anonymity and l-diversity
         if satisfies_k_anonymity and satisfies_l_diversity:
 
             valid_ds = ds
@@ -112,8 +119,13 @@ if __name__ == '__main__':
 
             attr = next(iterKeys)
             lvs[attr] += 1
+        # if the dataset doesn't satisfy k-anonymity and l-diversity, break the loop
         else:
             print(f"Dataset with lvs={valid_lvs} doesn't satisfies k-anonymity and l-diversity")
+            
+            # Print if the dataset couldn't satisfy the k-anonymity and l-diversity with lv = 1
+            if all(value == 1 for value in valid_lvs.values()):
+                print(f"k={k} and l={l} are not satisfied even with the maximum level of generalization")
             break
 
     print("Initial dataset:")
@@ -122,9 +134,3 @@ if __name__ == '__main__':
     print(f"Generalized dataset at this level {valid_lvs}:")
     print(pd.DataFrame(valid_ds))
 
-
-
-# # Print the dataset and the results
-# print(pd.DataFrame(ds))
-# print(f"Does the dataset satisfy the k-anonymity for k={K}? {satisfies_k_anonymity}")
-# print(f"Does the dataset satisfy the l-diversity for l={L}? {satisfies_l_diversity}")
