@@ -27,8 +27,13 @@ Make sure you have python installed. Install the required packages using pip
 pip install -r requirements.txt
 ```
 ### Run the generalization with anonymization and diversity check
+With default variables (k=3, l=3, number of records=1000)
 ``` 
 python l-diversity.py 
+```
+If you want to set the values
+```
+python l-diversity -k (insert new number for k anonymity) -l (insert new number for l-diversity) -n (insert new number of records) 
 ```
 ### Requirements 
 - Python 3
