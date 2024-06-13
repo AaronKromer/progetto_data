@@ -196,8 +196,9 @@ def dataGeneration(num=NUM):
     employee_list = []
     num_woman=0
     num_man=0
+    #Detroit's zip codes, they range from 48127 to 48289
     zip_code_list=range(48127 ,48289)
-    #zip_code_list=[16121, 16124, 16125, 16126, 16127, 16128, 16129, 16131, 16132, 16133, 16134, 16135, 16136, 16137, 16138, 16139, 16140, 16141, 16142, 16143, 16144, 16145, 16146, 16147, 16148, 16149]
+    
 
     for i in range(int(numOfEmployees)):
         #choose random number 0 or 1: 0 for female name and 1 for male name
